@@ -1,0 +1,7 @@
+{
+  "name": "appProduto",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
