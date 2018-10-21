@@ -3,16 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Produtos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+	<ion-card *ngFor="let produto of lista">
+	  <img [src]="produto.imagem"/>
+	  <ion-card-content>
+		<ion-card-title>
+		  {{ produto.titulo }}
+		</ion-card-title>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+	  </ion-card-content>
+	  <button ion-button block (click)="abreDetalhe(produto)">Mais detalhes</button>
+	  <button ion-button block color="secondary">{{ produto.tx_valor }}</button>
+	</ion-card>
 </ion-content>
